@@ -4,7 +4,7 @@ import styles from '../list/style.module.css'
 // export class Item extends React.Component {
 //   render(){
 //     console.log('item')
-function Item({ item, deleteHandler }) {
+function Item({ item, deleteHandler, addLike }) {
     return(
       <div className={styles.item}>
         <div className="card" style={{width: '10rem'}}>
@@ -13,7 +13,8 @@ function Item({ item, deleteHandler }) {
          <h5 className="card-title" style={{color: 'black'}}>{item.title ?? 'no name'}</h5>
          <p className="card-text" style={{color: 'black'}} >{item.text ?? 'no email'}</p>
          <button onClick={()=> deleteHandler(item.myId)} className="btn btn-secondary">Удалить</button>
-        
+         
+         <button onClick={()=> addLike(item.myId)} className="btn btn-secondary">Like {item.likes}</button>
      </div>
     </div>
     </div>

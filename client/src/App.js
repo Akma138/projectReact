@@ -17,7 +17,7 @@ function App() {
     e.preventDefault()
     console.log('priv')
     setItems(prev => [...prev, 
-              {myId: Math.round(Math.random()* 1000), title: inputs.title, text: inputs.text, text: inputs.text2}])
+              {myId: Math.round(Math.random()* 1000), title: inputs.title, text: inputs.text, text: inputs.text2, likes: 0}])
     setInputs({})
     }
 
@@ -29,6 +29,10 @@ function App() {
   const deleteHandler = (id) => {
     setItems(items.filter((item) => item.myId !== id))
   }
+  const addLike = (id) => {
+    setItems(items.filter((item) => item.myId === id ? item.likes +=1: item))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -40,7 +44,7 @@ function App() {
               inputsHandler={inputsHandler}
               inputs={inputs}></Form>
 
-        <List items={items} deleteHandler={deleteHandler} />
+        <List items={items} deleteHandler={deleteHandler} addLike={addLike}/>
       
       </header>
     </div>
