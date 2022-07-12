@@ -1,18 +1,18 @@
 import React from 'react'
 import Item from '../item/item.jsx'
+import styles from './style.module.css'
 
-export class List extends React.Component {
-  render(){
-    console.log('list')
+export default function List({ items, deleteHandler}) {
+ console.log('list', styles)
     return(
-      <>
-        <div>list</div>
-        <Item />
-      </>
+      <div className={styles.list}>
+      
+        {items.map((item)=> <Item key={item.myId} item={item} deleteHandler={deleteHandler}/>)}
+      </div>
     );
   }
-}
 
-export default List; 
+
+
 
 

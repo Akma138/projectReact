@@ -3,29 +3,33 @@ import React from 'react'
 // export class Form extends React.Component {
 //   render(){
 //     console.log('form')
-export default function Form({ add}) {
+export default function Form({ add, inputsHandler, inputs}) {
   console.log('form')
     return(
       <>
         <form onSubmit={add}>
-        {/* <div class="mb-3">
-    <label for="exampleInputName" class="form-label"><Name></Name></label>
-    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+        {
+        /* <div className="mb-3">
+    <label htmlFor="exampleInputName" className="form-label"><Name></Name></label>
+    <input type="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
    </div> */}
+     <div className="mb-3">
+    <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
+    <input type="text" className="form-control" id="exampleInputName" aria-describedby="namelHelp" name="title" onChange={inputsHandler} value={inputs.title ?? ''}/>
+  </div>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+    <input type="text1" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="text"onChange={inputsHandler} value={inputs.text ?? ''}/>
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"/>
+    <input type="text" className="form-control" id="exampleInputPassword1" name="text2"onChange={inputsHandler} value={inputs.text2 ?? ''}/>
   </div>
   <div className="mb-3 form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+    <input type="checkbox" className="form-check-input" id="exampleCheck1" name="check"onChange={inputsHandler} checked={Boolean(inputs.check)} />
     <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-secondary">Submit</button>
 </form>
       </>
     );
