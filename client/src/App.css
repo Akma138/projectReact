@@ -1,5 +1,6 @@
 body {
   background-color: bisque;
+  animation: zoomIn 3s;
 }
 .App {
   text-align: center;
@@ -25,6 +26,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  animation: zoomIn 3s;
 }
 
 .App-link {
@@ -38,4 +40,8 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.card:hover {
+  animation: flip 1s;
 }
