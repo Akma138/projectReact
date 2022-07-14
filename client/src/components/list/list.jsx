@@ -7,7 +7,7 @@ export default function List({ items, deleteHandler, addLike}) {
     return(
       <div className={styles.list}>
       
-        {items.map((item)=> <Item key={item.myId} item={item} deleteHandler={deleteHandler} addLike={addLike}/>)}
+        {items.map((item)=> <Item key={item.id} item={item} deleteHandler={deleteHandler} addLike={addLike}/>)}
       </div>
     );
   }

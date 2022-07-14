@@ -13,7 +13,9 @@ export default function Form({ add, inputsHandler, inputs}) {
     <label htmlFor="exampleInputName" className="form-label"><Name></Name></label>
     <input type="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
    </div> */}
-     <div className="mb-3">
+
+
+     {/* <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
     <input type="text" className="form-control" id="exampleInputName" aria-describedby="namelHelp" name="title" onChange={inputsHandler} value={inputs.title ?? ''}/>
   </div>
@@ -24,6 +26,26 @@ export default function Form({ add, inputsHandler, inputs}) {
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
     <input type="text" className="form-control" id="exampleInputPassword1" name="text2"onChange={inputsHandler} value={inputs.text2 ?? ''}/>
+  </div>
+  <div className="mb-3 form-check">
+    <input type="checkbox" className="form-check-input" id="exampleCheck1" name="check"onChange={inputsHandler} checked={Boolean(inputs.check)} />
+    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" className="btn btn-secondary">Submit</button>
+</form>
+      </>
+    ); */}
+     <div className="mb-3">
+    <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
+    <input type="text" className="form-control" id="exampleInputName" aria-describedby="namelHelp" name="name" onChange={inputsHandler} value={inputs.name}/>
+  </div>
+  <div className="mb-3">
+    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"onChange={inputsHandler} value={inputs.email}/>
+  </div>
+  <div className="mb-3">
+    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+    <input type="text" className="form-control" id="exampleInputPassword1" name="password" onChange={inputsHandler} value={inputs.password}/>
   </div>
   <div className="mb-3 form-check">
     <input type="checkbox" className="form-check-input" id="exampleCheck1" name="check"onChange={inputsHandler} checked={Boolean(inputs.check)} />
