@@ -14,11 +14,14 @@ function App() {
   console.log('app')
   const [items, setItems] = useState([]);
   const [inputs, setInputs] = useState({});
+  let [gift, setGift] = useState({});
 
   useEffect(()=> {
     getItems()
   }, [])
-
+  useEffect(()=> {
+    getGift()
+  }, [])
   const getItems = () => {
     axios.get('http://localhost:3004/users')
       .then((postsFromServer)=> {
@@ -28,6 +31,16 @@ function App() {
         }
       })
   };
+
+  const getGift = () => {
+    axios.get('https://api.thecatapi.com/v1/images/search')
+      .then((url)=> {
+        console.log(url);
+        console.log(url['data'][0]['url']);
+        let catUrl = url['data'][0]['url'];
+        setGift(catUrl);
+      })
+  }
   
   const addHandler = (e) => {
     e.preventDefault()
@@ -79,9 +92,10 @@ function App() {
         <Form add={addHandler}
               inputsHandler={inputsHandler}
               inputs={inputs}></Form>
-
+        <button onClick={getGift}>Gift</button>
+        <img src={gift} height='400px' width='400px'></img>
         <List items={items} deleteHandler={deleteHandler} addLike={addLike}/>
-      
+
       </header>
     </div>
   );
