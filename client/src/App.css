@@ -1,9 +1,11 @@
 body {
   background-color: bisque;
   animation: zoomIn 3s;
+  size: 20px;
 }
 .App {
   text-align: center;
+
 }
 
 .App-logo {

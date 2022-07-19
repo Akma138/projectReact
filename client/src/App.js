@@ -8,6 +8,8 @@ import Form from './components/form/form';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from './components/Navbar/Navbar';
+import { Routes, Route,} from "react-router-dom";
+import Main from './components/Main/Main';
 
 
 function App() {
@@ -84,17 +86,22 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <Navbar></Navbar>
       
-       <p>Привет, это сайт единных скидок. </p>
-       <p>Если хочешь узнать секретные скидки, зарегистрируйся.</p>
-       <p>Рады, что вы с нами! Нас много!</p>
-       <br></br>
-        <Form add={addHandler}
+     
+       <button class="btn btn-secondary" onClick={getGift}>Получи своего котика</button>
+        <img src={gift} height='300px' width='250px'></img> 
+        
+       <Routes>
+        <Route path='/' element ={ <Main />} />
+        <Route path='/registration'element = {  <Form add={addHandler}
               inputsHandler={inputsHandler}
-              inputs={inputs}></Form>
-        <button onClick={getGift}>Gift</button>
-        <img src={gift} height='400px' width='400px'></img>
-        <List items={items} deleteHandler={deleteHandler} addLike={addLike}/>
+              inputs={inputs} />} />
+        <Route path='/allusers' element = {<List items={items} deleteHandler={deleteHandler} addLike={addLike}/>} />
+       
+       
+       </Routes>
+
 
       </header>
     </div>
