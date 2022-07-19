@@ -7,6 +7,7 @@ import List from './components/list/list.jsx';
 import Form from './components/form/form';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Navbar from './components/Navbar/Navbar';
 
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      
        <p>Привет, это сайт единных скидок. </p>
        <p>Если хочешь узнать секретные скидки, зарегистрируйся.</p>
        <p>Рады, что вы с нами! Нас много!</p>
