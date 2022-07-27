@@ -7,8 +7,9 @@ export default function Navbar() {
     <Link to='/' type="button" class="btn btn-secondary">Главная</Link>
     <Link to='/registration' type="button" class="btn btn-secondary">Регистрация</Link>
     <Link to='/allusers' type="button" class="btn btn-secondary">Пользователи</Link>
-    <Link to='/goods' type="button" class="btn btn-secondary">Товары</Link>
-    <Link to='/blog' type="button" class="btn btn-secondary">Блог</Link>
+    <Link to='/product' type="button" class="btn btn-secondary">Регистрация товара</Link>
+    <Link to='/allproduct' type="button" class="btn btn-secondary">Все товары</Link>
+    <Link to='/oneproduct' type="button" class="btn btn-secondary">Карточка товара</Link>
     </div>
   )
 }

@@ -3,19 +3,24 @@ import logo from './logo.svg';
 import './App.css';
 
 import List from './components/list/list.jsx';
-
+import Product from './components/Product/Product';
 import Form from './components/form/form';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from './components/Navbar/Navbar';
 import { Routes, Route,} from "react-router-dom";
 import Main from './components/Main/Main';
+import Allproduct from './components/Allproduct/Allproduct';
+import Oneproduct from './components/Oneproduct/Oneproduct';
+
 
 
 function App() {
   console.log('app')
   const [items, setItems] = useState([]);
   const [inputs, setInputs] = useState({});
+  const [products, setProducts] = useState([]);
+  const [inpats, setInpats] = useState({});
   let [gift, setGift] = useState({});
 
   useEffect(()=> {
@@ -44,9 +49,36 @@ function App() {
       })
   }
   
-  const addHandler = (e) => {
+  const addHandler1 = (e) => {
     e.preventDefault()
-    console.log('priv')
+    console.log('privet')
+    setProducts(prev => [...prev, { myid: Math.round(Math.random()* 1000), 
+                    title: inpats.title,
+                    text: inpats.text,
+                    price: inpats.price,
+                    location: inpats.location}]);
+  setInpats({})
+  }
+  console.log('products =>', products);
+  const inpatsHandler = (e) => {
+    console.log(e.target.value)
+    setInpats(pr => ({...pr, [e.target.name]: e.target.value}))
+  }
+
+  const deleteHandler1 = (id) => {
+    // console.log(id);
+    // axios.delete('http://localhost:3004/products/' + id)
+    // .then((deleteFromServer)=> {
+    //   console.log(deleteFromServer);
+    //   getItems();
+    // })
+    setProducts(products.filter((product) => product.myid !== id))
+  }
+ 
+
+  let addHandler = (e) => {
+    e.preventDefault()
+    console.log('privet')
     console.log("e => ", e)
     let obj = {
       id: Math.round(Math.random()* 1000), 
@@ -87,22 +119,24 @@ function App() {
     <div className="App">
       <header className="App-header">
       <Navbar></Navbar>
-      
-     
-       <button class="btn btn-secondary" onClick={getGift}>Получи своего котика</button>
-        <img src={gift} height='300px' width='250px'></img> 
-        
        <Routes>
-        <Route path='/' element ={ <Main />} />
+        <Route path='/' element ={ <Main gift={gift} getGift={getGift}/>} />
         <Route path='/registration'element = {  <Form add={addHandler}
               inputsHandler={inputsHandler}
               inputs={inputs} />} />
         <Route path='/allusers' element = {<List items={items} deleteHandler={deleteHandler} addLike={addLike}/>} />
        
-       
        </Routes>
-
-
+       
+        <Product addHandler1={addHandler1} 
+                  inpatsHandler={inpatsHandler}
+                  inpats={inpats}/>
+       <Allproduct products={products}
+                   deleteHandler1={deleteHandler1}/>
+     
+       
+       
+      
       </header>
     </div>
   );
