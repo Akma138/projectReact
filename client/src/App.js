@@ -125,14 +125,19 @@ function App() {
               inputsHandler={inputsHandler}
               inputs={inputs} />} />
         <Route path='/allusers' element = {<List items={items} deleteHandler={deleteHandler} addLike={addLike}/>} />
-       
+        <Route path='/product' element = {<Product addHandler1={addHandler1}
+                  inpatsHandler={inpatsHandler}
+                  inpats={inpats}/>} />
+       <Route path='/allproduct' element = { <Allproduct products={products}
+                   deleteHandler1={deleteHandler1}/>} />
+        
        </Routes>
        
-        <Product addHandler1={addHandler1} 
+        {/* <Product addHandler1={addHandler1} 
                   inpatsHandler={inpatsHandler}
                   inpats={inpats}/>
        <Allproduct products={products}
-                   deleteHandler1={deleteHandler1}/>
+                   deleteHandler1={deleteHandler1}/> */}
      
        
        
