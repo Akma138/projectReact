@@ -1,10 +1,12 @@
 import React from 'react'
+import styless from './style2.module.css'
 
 export default function Oneproduct({products, deleteHandler1}) {
   console.log('oneproduct')
   return (
     <>
-     <div>Oneproduct</div>
+
+     <div className={styless.product}></div>
     <div className="card" style={{width: '15rem', height: '20rem'}}>
     <img src="images/troley.png" style={{width: '8rem', height: '7rem'}} className="card-img-top" alt="..."/>
    <div className="card-body">
