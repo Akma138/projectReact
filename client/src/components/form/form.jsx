@@ -5,7 +5,7 @@ export default function Form({ add, inputsHandler, inputs }) {
   console.log('form')
   return (
     <>
-      <form onSubmit={add}>
+      <form onSubmit={add} style={{backgroundColor: 'ButtonShadow'}}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
           <input type="text" className="form-control" id="exampleInputName" aria-describedby="namelHelp" name="name" onChange={inputsHandler} value={inputs.name} />

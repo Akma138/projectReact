@@ -5,7 +5,7 @@ export default function Product({ addHandler1, inpatsHandler, inpats, selectedHa
 
   return (
     <>
-      <form onSubmit={addHandler1}>
+      <form onSubmit={addHandler1} style={{backgroundColor: 'ButtonShadow'}}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">наименование товара </label>
           <input type="text" className="form-control" id="title" name="title" onChange={inpatsHandler} value={inpats.title ?? ''} />
