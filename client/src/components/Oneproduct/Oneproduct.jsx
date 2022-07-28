@@ -14,8 +14,8 @@ export default function Oneproduct({products, deleteHandler1}) {
     <p className="card-text"style={{color: 'black'}}>{products.text ?? ''}</p>
     <p className="card-text"style={{color: 'black'}}>{products.price ?? ''}</p>
     <p className="card-text"style={{color: 'black'}}>{products.location ?? ''}</p>
-    <a href="#" className="btn btn-secondary">Go somewhere</a>
-    <button onClick={()=> deleteHandler1(products.myid)}  type="submit" className="btn btn-secondary">удалить</button>
+    {/* <a href="#" className="btn btn-secondary">Go somewhere</a> */}
+    <button onClick={()=> deleteHandler1(products.id)}  type="submit" className="btn btn-secondary">удалить</button>
     </div>
     </div>
     </>

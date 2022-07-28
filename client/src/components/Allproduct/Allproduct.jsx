@@ -9,7 +9,7 @@ export default function Allproduct({products, deleteHandler1}) {
     <>
     {/* <div>Allproduct</div> */}
     <div className={styless.Allproduct} >
-    {products.map((products)=> <Oneproduct key={products.myId} products={products} deleteHandler1={deleteHandler1}/>)}
+    {products.map((products)=> <Oneproduct key={products.id} products={products} deleteHandler1={deleteHandler1}/>)}
     </div>
     </>
     
