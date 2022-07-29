@@ -9,7 +9,7 @@ export default function Navbar() {
     <Link to='/allusers' type="button" class="btn btn-secondary">Пользователи</Link>
     <Link to='/product' type="button" class="btn btn-secondary">Регистрация товара</Link>
     <Link to='/allproduct' type="button" class="btn btn-secondary">Все товары</Link>
-    <Link to='/oneproduct' type="button" class="btn btn-secondary">Карточка товара</Link>
+    {/* <Link to='/oneproduct' type="button" class="btn btn-secondary">Карточка товара</Link> */}
     </div>
   )
 }
